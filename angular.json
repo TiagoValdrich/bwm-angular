@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "bwm",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
@@ -39,7 +39,7 @@
               "./node_modules/popper.js/dist/umd/popper.min.js",
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]            
+            ]
           },
           "configurations": {
             "production": {
@@ -145,5 +145,12 @@
       }
     }
   },
-  "defaultProject": "bwm-angular"
+  "defaultProject": "bwm-angular",
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "spec": false
+      }
+    }
+  }
 }
