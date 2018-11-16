@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { Rental } from "./rental.class";
 
 @Injectable()
 
@@ -7,9 +8,9 @@ export class RentalService {
 
     constructor() {}
 
-    private rentals: Array<Object> = [
+    private rentals: Array<Rental> = [
         {
-          id: 1, 
+          id: "1", 
           title: "Central Apartment", 
           city: "New York", 
           street: "Times Square", 
@@ -18,10 +19,11 @@ export class RentalService {
           bedrooms: 3, 
           description: "Very nice apartment", 
           dailyRate: 34,
-          shared: false
+          shared: false,
+          createdAt: "01/03/2017"
         },
         {
-          id: 2,
+          id: "2",
           title: "Central Apartment 2",
           city: "San Francisco",
           street: "Main street",
@@ -34,7 +36,7 @@ export class RentalService {
           createdAt: "24/12/2017"
         },
         {
-          id: 3,
+          id: "3",
           title: "Central Apartment 3",
           city: "Bratislava",
           street: "Hlavna",
@@ -47,7 +49,7 @@ export class RentalService {
           createdAt: "24/12/2017"
         },
         {
-          id: 4,
+          id: "4",
           title: "Central Apartment 4",
           city: "Berlin",
           street: "Haupt strasse",
@@ -61,9 +63,9 @@ export class RentalService {
       }
       ];
 
-      public getRentals(): any {
+      public getRentals(): Observable<Array<Rental>> {
 
-        const rentalObservable = new Observable((observer) => {
+        const rentalObservable: Observable<Array<Rental>> = new Observable((observer) => {
 
             setTimeout( () => {
 
