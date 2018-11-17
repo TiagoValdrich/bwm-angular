@@ -1,9 +1,9 @@
-<a routerLink="/rentals/{{ rentalInfo.id }}">
+<a routerLink="/rentals/{{ rentalInfo._id }}">
   <div class="card bwm-card">
-    <img class="card-img-top" src="http://via.placeholder.com/350x250" alt="">
+    <img class="card-img-top" src="{{ rentalInfo.image }}" alt="">
     <div class="card-block">
-      <h6 class="card-subtitle">{{ rentalInfo.title }} &#183;{{ rentalInfo.city }}</h6>
-      <h4 class="card-title">{{ rentalInfo.description }}</h4>
+      <h6 class="card-subtitle {{rentalInfo.category}}">{{rentalInfo.shared ? 'Shared' : 'Whole' }} {{ rentalInfo.category }} &#183;{{ rentalInfo.city }}</h6>
+      <h4 class="card-title">{{ rentalInfo.title }}</h4>
       <p class="card-text">${{ rentalInfo.dailyRate }} per Night &#183; Free Cancelation</p>
     </div>
   </div>
