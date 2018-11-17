@@ -19,12 +19,6 @@ export class RentalListComponent implements OnInit {
     rentalObservable.subscribe(
       (rentals: Array<Rental>) => {
         this.rentals = rentals
-      },
-      (err) => {
-        console.log("Error")
-      }, 
-      () => {
-        console.log('Complete')
       }
     );
   }
