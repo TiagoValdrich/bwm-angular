@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgPipesModule } from 'ngx-pipes';
+import { MapModule } from '../common/map/map.module';
 
 import { Routes, RouterModule } from '@angular/router';
 
@@ -37,6 +38,7 @@ const routes: Routes = [
         RouterModule,
         HttpClientModule,
         NgPipesModule,
+        MapModule,
         RouterModule.forChild(routes)
     ],
     exports: [
