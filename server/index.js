@@ -1,9 +1,10 @@
-const express   = require('express');
-const mongoose  = require('mongoose');
-const config    = require('./config/dev');
-const FakeDb    = require('./fake-db');
+const express   = require('express'),
+      mongoose  = require('mongoose'),
+      config    = require('./config/dev'),
+      FakeDb    = require('./fake-db');
 
-const rentalRoutes = require('./routes/rentals'); 
+const rentalRoutes = require('./routes/rentals'),
+      userRoutes = require('./routes/users');
 
 mongoose.connect(config.DB_URI, { useNewUrlParser: true })
     .then(
@@ -16,6 +17,7 @@ mongoose.connect(config.DB_URI, { useNewUrlParser: true })
 const app = express();
 
 app.use('/api/v1/rentals', rentalRoutes);
+app.use('/api/v1/users', userRoutes);
 
 const PORT = process.env.PORT || 3001
 
